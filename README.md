@@ -1,5 +1,5 @@
 # symptom-checker
-enter your symptom and will display the causes and treatment for it. 
+enter your symptom and will display the causes and treatments for it. 
 
 made with jQuery, only limited to 3 symptoms. 
 
