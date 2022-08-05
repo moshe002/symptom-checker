@@ -59,3 +59,13 @@ body .search-container #form-search .submit-search:hover {
     cursor: pointer;
     opacity: 100%;
 }
+
+@media only screen and (max-width: 1200px){
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
