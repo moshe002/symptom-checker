@@ -1,4 +1,8 @@
-$(document).ready(function(){
+$(document).keypress(function(event){
+    if(event.which == '13'){
+        event.preventDefault()
+    }
+}).ready(function(){
     $('.submit-search').on('click', (e) => {
         e.preventDefault()
         if($('#searchBar').val()){ // if statement checks if searchBar has value, if it does it can run the code below, if it does not then it wont do anything
@@ -188,6 +192,67 @@ $(document).ready(function(){
                     //DIZZINESS
                 }
                 break;
+                // FOURTH CASE
+                case 'stomachache': case 'Stomachache': case 'tummy ache': case 'Tummy ache': case 'stomach ache': case 'Stomach ache': case 'Stomach Ache':
+                sideDiv = false
+                if (!sideDiv && totalWidth > 1200) {
+                    $('.search-container').animate({right: "175px"})
+                    sideDiv = true;
+                    $('.submit-search').after('<button>Search Again</button').css({
+                        'pointerEvents': 'none',
+                        'opacity': '20%'
+                    })
+                        
+                    $('button:last').addClass('submit-search').attr('title', 'Click me to search again').on('click', (e) => {
+                        e.preventDefault()
+                        location.reload()
+                    })
+                    $('body').append('<div style="//border: 1px solid black; display: flex; flex-direction: column; padding: 1rem 1rem; margin-top: 3rem; gap: 30px"></div>')
+                    $('div:last').append('<div style="//border: 1px solid green; padding: .5rem .5rem"><h2 id="causes">Causes:</h2></div>').append('<div style="//border: 1px solid red; padding: .5rem .5rem;"><h2  id="treatment">Treatment:</h2></div>')                
+                    $('<ul/>').appendTo('#causes').append('<li>Indigestion</li>').append('<li>Gas and gas pain</li>').append('<li>Constipation</li>').append('<li>Diarrhea</li>').append('<li>Food allergies and intolerance</li>').append('<li>Food poisoning</li>')
+                    .css({
+                        'marginTop': '10px',
+                        'fontSize': '16px',
+                        'color': 'gray'
+                    })  
+                    $('<ul/>').appendTo('#treatment').append('<li>Over the counter medications</li>').append('<li>Chamomile or peppermint tea</li>').append('<li>Chew your food slowly and well</li>').append('<li>Stay away from spicy and fried foods</li>').append('<li>Eat several smaller meals</li>')
+                    .css({
+                        'marginTop': '10px',
+                        'fontSize': '16px',
+                        'color': 'gray'
+                    })  
+                    //STOMACH ACHE
+                }
+                else {
+                    $('.search-container').animate({right: "0px"})
+                    $('.search-container').animate({top: "-80px"})
+                    sideDiv = false  
+                    $('.submit-search').after('<button>Search Again</button').css({
+                        'pointerEvents': 'none',
+                        'opacity': '20%'
+                    })
+                        
+                    $('button:last').addClass('submit-search').attr('title', 'Click me to search again').on('click', (e) => {
+                        e.preventDefault()
+                        location.reload()
+                    })
+                    $('body').append('<div style="//border: 1px solid black; display: flex; flex-direction: column; padding: 1rem 1rem; gap: 15px"></div>')
+                    $('div:last').append('<div style="//border: 1px solid green; padding: .5rem .5rem; margin-bottom: 2rem;"><h2 id="causes">Causes:</h2></div>').append('<div style="//border: 1px solid red; padding: .5rem .5rem; margin-bottom: 2rem;"><h2  id="treatment">Treatment:</h2></div>')                
+                    $('<ul/>').appendTo('#causes').append('<li>Indigestion</li>').append('<li>Gas and gas pain</li>').append('<li>Constipation</li>').append('<li>Diarrhea</li>').append('<li>Food allergies and intolerance</li>').append('<li>Food poisoning</li>')
+                    .css({
+                        'marginTop': '10px',
+                        'fontSize': '16px',
+                        'color': 'gray'
+                    })  
+                    $('<ul/>').appendTo('#treatment').append('<li>Over the counter medications</li>').append('<li>Chamomile or peppermint tea</li>').append('<li>Chew your food slowly and well</li>').append('<li>Stay away from spicy and fried foods</li>').append('<li>Eat several smaller meals</li>')
+                    .css({
+                        'marginTop': '10px',
+                        'fontSize': '16px',
+                        'color': 'gray'
+                    })  
+                    //STOMACH ACHE
+                }
+                break;
                 // DEFAULT CASE 
                 default: 
                     if(totalWidth > 1200){
@@ -215,8 +280,7 @@ $(document).ready(function(){
                             e.preventDefault()
                             location.reload()
                         })
-                    }
-                    
+                    } 
             } 
         }
     })

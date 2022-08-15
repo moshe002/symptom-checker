@@ -30,6 +30,7 @@ body .search-container #form-search {
 body .search-container #form-search #searchBar {
     outline: none;
     border: none;
+    border-bottom: 2.5px solid lightgray;
     text-align: center;
     font-size: 18px;
     width: 25rem;
@@ -40,7 +41,7 @@ body .search-container #form-search #searchBar {
 
 body .search-container #form-search #searchBar:focus {
     outline: none;
-    border-bottom: 2.5px solid lightgray;
+    border-bottom: 2.5px solid black;
 }
 
 body .search-container #form-search .submit-search {
